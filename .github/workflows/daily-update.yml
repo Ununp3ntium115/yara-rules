@@ -1,0 +1,29 @@
+name: Daily YARA Rules Update
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and build rules
+        run: |
+          echo "YARA rules daily build — $(date -u)"
+          # TODO: integrate full update-yara-rules.sh from main repo
+          echo "Current build uses pre-built rules"
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "YARA Rules (daily build)"
+          files: |
+            offline-package/velociraptor-claw-yara-offline.zip
+            version.json
+            checksums-yara.sha256
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
