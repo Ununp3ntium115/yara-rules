@@ -1,0 +1,32 @@
+{
+  "updated": "2026-03-21T23:25:00Z",
+  "total_rules": 43154,
+  "vql_artifacts": 26,
+  "sources": {
+    "yara_forge": {
+      "url": "https://yarahq.github.io/",
+      "rule_count": 11615,
+      "packages": ["full", "extended", "core"]
+    },
+    "citizenlab": {
+      "url": "https://github.com/citizenlab/malware-signatures",
+      "rule_count": 0
+    },
+    "macos_specific": {
+      "url": "https://gist.github.com/pedramamini/c586a151a978f971b70412ca4485c491",
+      "rule_count": 0
+    },
+    "awesome_yara": {
+      "url": "https://github.com/InQuest/awesome-yara",
+      "rule_count": 31469
+    },
+    "yaraify_abusech": {
+      "url": "https://yaraify.abuse.ch/",
+      "rule_count": 0
+    },
+    "detectraptor": {
+      "url": "https://github.com/mgreen27/DetectRaptor",
+      "rule_count": 70
+    }
+  }
+}
